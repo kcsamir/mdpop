@@ -19,3 +19,15 @@ library(mdpop)
 ```
 
 This package consists of many tools to do a multidimensional population modeling. It has many functions: 
+
+```{r list_fun}
+  help(cctocntry)
+  help(nametocc)
+  help(loadx)
+  help(fread_all)
+  help(nametocc)
+  help(popkc)
+  help(propkc)
+  help(pyredu)
+  help(pyramid)
+```
