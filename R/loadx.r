@@ -9,7 +9,7 @@
 #' load.x("filename")
 loadx <- function(ifile){
   load(ifile$value)
-  if(is.df(x)) {
+  if(is.data.frame(x)) {
         return(x)}
   else {
     return(data.frame(value=x))
