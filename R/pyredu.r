@@ -21,16 +21,16 @@
 pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
                         caption=NULL,nmlegend,edu.nmlegend,ipal=1) {
 
-  df1 <<- df1
-  Time<<-Time
-  area<<-area
-  scen<<-scen
-  popunit <<- popunit
-  caption <<- caption
-  nmlegend<<-nmlegend
-  edu.nmlegend <<- edu.nmlegend
-  ipal<<-ipal
-  stop("")
+  # df1 <<- df1
+  # Time<<-Time
+  # area<<-area
+  # scen<<-scen
+  # popunit <<- popunit
+  # caption <<- caption
+  # nmlegend<<-nmlegend
+  # edu.nmlegend <<- edu.nmlegend
+  # ipal<<-ipal
+  # stop("")
 
   if(is.null(caption)) caption = paste(area,scen,Time,sep="-")
 
