@@ -18,7 +18,7 @@
 
 
 
-pyredu1<- function(df1,Time,area,scen,popunit = "Thousands",
+pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
                         caption=NULL,nmlegend,edu.nmlegend,ipal=1) {
 
   df1 <<- df1
