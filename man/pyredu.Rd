@@ -2,7 +2,7 @@
 % Please edit documentation in R/pyramid.R
 \name{pyredu}
 \alias{pyredu}
-\title{Population Pyramid in MSDem}
+\title{Population Pyramid in MSDem ??}
 \usage{
 pyredu(
   df,
