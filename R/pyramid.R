@@ -1,4 +1,4 @@
-#' Population Pyramid in MSDem
+#' Population Pyramid in MSDem ??
 #'
 #' This function generates a pyramid for a cntry x Time
 #' @param df with four colums age, sex (male/female), edu, value
