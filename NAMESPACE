@@ -2,9 +2,11 @@
 
 export(cctoname)
 export(cntocc)
+export(f.unlink.cc.text)
 export(fread_all)
 export(loadx)
 export(popinterpkc)
 export(popkc)
 export(propkc)
 export(pyredu)
+export(save.var.cntry.file)
