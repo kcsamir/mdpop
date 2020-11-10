@@ -13,6 +13,7 @@ pyredu(
   caption = NULL,
   nmlegend,
   edu.nmlegend,
+  limits = NULL,
   ipal = 1
 )
 
@@ -25,23 +26,26 @@ pyredu(
   caption = NULL,
   nmlegend,
   edu.nmlegend,
+  limits = NULL,
   ipal = 1
 )
 }
 \arguments{
-\item{area}{region}
+\item{area}{region (will be used for caption, if caption is NULL)}
 
-\item{scen}{specific scenario}
+\item{scen}{specific scenario (will be used for caption, if caption is NULL)}
 
 \item{popunit}{unit of value (default '000)}
 
-\item{caption}{Full list else year area scen will be pasted}
+\item{caption}{Full list else year, area, and scen will be pasted}
 
-\item{nmlegend}{legends for 'edu' else variable's unique values will be used}
+\item{nmlegend}{heading of legend}
 
 \item{edu.nmlegend}{names of education categories}
 
-\item{df}{with four colums age, sex (male/female), edu, value}
+\item{ipal}{if numeric, it uses colors from brewer; else, you can supply the names of the colors manually}
+
+\item{df}{with four colums age, sex (male/female), edu, value(e.g. population)}
 
 \item{year}{year}
 }
@@ -57,6 +61,6 @@ This function generates a pyramid for a cntry x Time
 }
 \examples{
 pyredu(df=df,year=2015,area="ARM",scen="Baseyear",nmlegend="Education")
-pyredu(df=df,year=2015,area="ARM",scen="Baseyear",nmlegend="Education")
+pyredu(df=df,year=2015,area="ARM",scen="Baseyear",nmlegend="Education",ipal=1)
 }
 \keyword{pyramid}
