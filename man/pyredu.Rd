@@ -12,7 +12,7 @@ pyredu(
   popunit = "Thousands",
   caption = NULL,
   nmlegend,
-  edu.nmlegend,
+  edu.nmlegend = NULL,
   limits = NULL,
   ipal = 1
 )
@@ -25,7 +25,7 @@ pyredu(
   popunit = "Thousands",
   caption = NULL,
   nmlegend,
-  edu.nmlegend,
+  edu.nmlegend = NULL,
   limits = NULL,
   ipal = 1
 )
@@ -41,7 +41,7 @@ pyredu(
 
 \item{nmlegend}{heading of legend}
 
-\item{edu.nmlegend}{names of education categories}
+\item{edu.nmlegend}{names of education categories NULL=takes names}
 
 \item{ipal}{if numeric, it uses colors from brewer; else, you can supply the names of the colors manually}
 

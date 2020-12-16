@@ -2,6 +2,7 @@
 
 export(cctoname)
 export(cntocc)
+export(eapr)
 export(f.unlink.cc.text)
 export(fread_all)
 export(loadx)

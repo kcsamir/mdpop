@@ -9,7 +9,7 @@
 #' @param popunit unit of value (default '000)
 #' @param caption Full list else year, area, and scen will be pasted
 #' @param nmlegend  heading of legend
-#' @param edu.nmlegend names of education categories
+#' @param edu.nmlegend names of education categories NULL=takes names
 #' @param ipal if numeric, it uses colors from brewer; else, you can supply the names of the colors manually
 #' @return pyramid
 #' @keywords pyramid
@@ -20,7 +20,7 @@
 pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
                   caption=NULL,
                   nmlegend,
-                  edu.nmlegend,
+                  edu.nmlegend=NULL,
                   limits=NULL,
                   ipal=1) {
 
@@ -43,6 +43,7 @@ pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
   male_nm =   grep("^m",sex.names,value = T)
 
   edu.nm <- sort(unique(df1$edu))
+  if(is.null(edu.nmlegend)) edu.nmlegend <- edu.nm
 
   if(length(ipal)>1){
 
@@ -66,7 +67,9 @@ pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
                         guide = guide_legend(reverse = TRUE))+
     geom_hline(yintercept = 0,color="black")+
     theme_bw()
-  } else {
+
+
+ } else {
     gg1 <-
       df1%>%arrange(age)%>%
       ggplot(mapping = aes(x=age,
@@ -81,8 +84,10 @@ pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
            fill = "Educational attainment") +
       # scale_y_continuous(labels = abs) +
       scale_fill_brewer(name=nmlegend,breaks=edu.nm,
-                        labels=edu.nmlegend,type="seq",
-                        palette=ipal,guide = guide_legend(reverse = TRUE))+
+                        labels=edu.nmlegend,
+                        type="seq",
+                        palette=ipal,
+                        guide = guide_legend(reverse = TRUE))+
       geom_hline(yintercept = 0,color="black")+
       theme_bw()
 
