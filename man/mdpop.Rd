@@ -10,7 +10,8 @@ mdpop(logit)
 y unlogit value
 }
 \description{
-This package allows you to work with mdpop and has the list of functions
+This package allows you to work with mdpop and has the list of functions:
+cctoname, eapr, fread_all, fsaveVarCntry, funlinkcctext, loadx, cntocc, popinterpkc, popkc, propkc, pyramid, pyredu
 }
 \examples{
 un_logit(1)
