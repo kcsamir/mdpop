@@ -1,6 +1,6 @@
 #' mdpop
 #'
-#' This package allows you to work with mdpop and has the list of functions
+#' This package allows you to work with mdpop and has the list of functions: cctoname, eapr, fread_all, fsaveVarCntry, funlinkcctext, loadx, cntocc, popinterpkc, popkc, propkc, pyramid, pyredu
 #' @param cctoname
 #' @param eapr
 #' @param fread_all
