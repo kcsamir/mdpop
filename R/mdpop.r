@@ -19,9 +19,9 @@
 #' @keywords logit
 #' @export
 #' @examples
-#' un_logit(1)
+#' mdpop(1)
 
 mdpop <- function(logit){
   y = exp(logit)/(1 + exp(logit))
-  return(y)
+  return("testing")
 }

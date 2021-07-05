@@ -41,6 +41,6 @@ This package allows you to work with mdpop and has the list of functions:
 cctoname, eapr, fread_all, fsaveVarCntry, funlinkcctext, loadx, cntocc, popinterpkc, popkc, propkc, pyramid, pyredu
 }
 \examples{
-un_logit(1)
+mdpop(1)
 }
 \keyword{logit}
