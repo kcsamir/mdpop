@@ -11,7 +11,8 @@ eapr <- function(prop) {
   # prop <<- prop
   # stop()
   x <- rev(cumsum(rev(prop$value)))
-  eapr.x <- prop[-nrow(prop),]
-  eapr.x$value<- x[2:6]/x[1:5]
+  n <- length(x)
+  eapr.x <- prop[-nrow(prop), ]
+  eapr.x$value <- x[2:n]/x[1:(n-1)]
   return(eapr.x)
 }
