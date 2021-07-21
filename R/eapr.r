@@ -9,7 +9,7 @@
 
 eapr <- function(prop) {
   # prop <<- prop
-  # stop()
+  # stop("Hello")
   x <- rev(cumsum(rev(prop$value)))
   n <- length(x)
   eapr.x <- prop[-nrow(prop), ]
