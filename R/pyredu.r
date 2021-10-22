@@ -38,7 +38,7 @@ pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
 
   if(is.null(caption)) caption = paste(area,scen,Time,sep="-")
 
-  sex.names =  unique(df1$sex)
+  sex.names =  tolower(unique(df1$sex))
   female_nm = grep("f",sex.names,value = T)
   male_nm =   grep("^m",sex.names,value = T)
 
@@ -70,7 +70,22 @@ pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
 
 
  } else {
-    gg1 <-
+
+   if(length(edu.nm)==1){
+      gg1 <-
+     df1%>%arrange(age)%>%
+       ggplot(mapping = aes(x=age,
+                            y=ifelse(sex==female_nm,value,-value))) +
+       geom_bar(stat = "identity",position= "stack")+
+       coord_flip()+
+       ggtitle(caption)+# labs(fill = nmlegend)#https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/
+       #https://aosmith.rbind.io/2018/01/19/reversing-the-order-of-a-ggplot2-legend/
+       labs(x = "Age group",
+            y = paste("Males       Population in",popunit,"      Females",sep=" ")) +
+       geom_hline(yintercept = 0,color="black")+
+        theme_bw()
+     }else{
+   gg1 <-
       df1%>%arrange(age)%>%
       ggplot(mapping = aes(x=age,
                            y=ifelse(sex==female_nm,value,-value),
@@ -90,7 +105,7 @@ pyredu<- function(df1,Time,area,scen,popunit = "Thousands",
                         guide = guide_legend(reverse = TRUE))+
       geom_hline(yintercept = 0,color="black")+
       theme_bw()
-
+  }#if no edu
 }
 
   # nepal11_bara1_marital %>%
