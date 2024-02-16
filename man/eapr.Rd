@@ -7,7 +7,7 @@
 eapr(prop)
 }
 \arguments{
-\item{prop}{distribution data 'edu' (sorted) 'value'}
+\item{prop}{distribution data 'edu' (sorted) 'value' for single age-group}
 }
 \value{
 eapr

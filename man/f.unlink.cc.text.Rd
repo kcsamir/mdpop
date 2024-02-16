@@ -11,9 +11,6 @@ f.unlink.cc.text(cc, ipatt)
 
 \item{ipatt}{pattern to find withing the folder}
 }
-\value{
-
-}
 \description{
 This function finds and deletes file(s)
 }

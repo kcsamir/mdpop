@@ -1,15 +1,15 @@
 #' Convert given edu distribution into eapr
 #'
 #' This function returns EAPR for given education distribution
-#' @param prop distribution data 'edu' (sorted) 'value'
+#' @param prop distribution data 'edu' (sorted) 'value' for single age-group
 #' @return eapr
 #' @keywords read
 #' @export
 #' @examples
 
 eapr <- function(prop) {
-  # prop <<- prop
-  # stop("Hello")
+   prop <<- prop
+   stop("Hello")
   # print("Hello")
   x <- rev(cumsum(rev(prop$value)))
   n <- length(x)
