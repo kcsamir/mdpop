@@ -7,6 +7,7 @@
 #' @param fread_all xxx
 #' @param fsaveVarCntry xxx
 #' @param funlinkcctext xxx
+#' @param funlines xxx
 #' @param loadx  xxx
 #' @param cntocc  xxx
 #' @param popinterpkc  xxx

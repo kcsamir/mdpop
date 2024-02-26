@@ -17,6 +17,8 @@ mdpop(logit)
 
 \item{funlinkcctext}{xxx}
 
+\item{funlines}{xxx}
+
 \item{loadx}{xxx}
 
 \item{cntocc}{xxx}
