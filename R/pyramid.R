@@ -33,18 +33,16 @@ pyr_ag <- function(res1,ireg,ivar="pop",iTime,
 
   if(length(ireg)==1){
     if(ireg == "World"){
-
-      if(length(iiscen) >1){#here the columns = 12. if it is a real list, it will be less than that
+     if(length(iiscen) >1){#here the columns = 12. if it is a real list, it will be less than that
         df1 = res1[,region:="World"][Time%in%iTime][,by=.(Time,sex,edu,agest,scen),.(pop=sum(pop,na.rm=T))
         ][,setnames(.SD,c("agest","pop"),c("age","value"))][age<=100&age>=0]
-
       } else {
         df1 = res1[,region:="World"][Time%in%iTime][,by=.(Time,sex,edu,agest),.(pop=sum(pop,na.rm=T))
         ][,setnames(.SD,c("agest","pop"),c("age","value"))][age<=100&age>=0][,scen:=iiscen]
       }
 
     } else {
-      df1 = copy(res1)[region%in%ireg&Time%in%iTime&scen%in%iiscen
+      df1 = copy(res1)[region%in%ireg & Time%in%iTime & scen%in%iiscen
       ][, setnames(.SD, c("pop","agest"),c("value","age"))][age<=100&age>=0]
     }
   } else { #already selected here scen has cnt name so be careful
