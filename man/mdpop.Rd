@@ -9,7 +9,9 @@ mdpop(logit)
 \arguments{
 \item{cctoname}{xxx}
 
-\item{eapr}{xxx}
+\item{eapr}{eapr calc for give value (prop)}
+
+\item{eapr1}{eapr calc for give value (prop) within data.table}
 
 \item{fread_all}{xxx}
 
@@ -40,7 +42,7 @@ y unlogit value
 }
 \description{
 This package allows you to work with mdpop and has the list of functions:
-cctoname, eapr, fread_all, fsaveVarCntry, funlinkcctext, loadx, cntocc, popinterpkc, popkc, propkc, pyramid, pyredu
+cctoname, eapr, eapr1, fread_all, fsaveVarCntry, funlinkcctext, loadx, cntocc, popinterpkc, popkc, propkc, pyramid, pyredu
 }
 \examples{
 mdpop(1)

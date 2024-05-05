@@ -3,6 +3,7 @@
 export(cctoname)
 export(cntocc)
 export(eapr)
+export(eapr1)
 export(f.unlink.cc.text)
 export(fread_all)
 export(funlines)

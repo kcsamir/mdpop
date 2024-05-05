@@ -1,9 +1,10 @@
 #' mdpop
 #'
 #' This package allows you to work with mdpop and has the list of functions:
-#' cctoname, eapr, fread_all, fsaveVarCntry, funlinkcctext, loadx, cntocc, popinterpkc, popkc, propkc, pyramid, pyredu
+#' cctoname, eapr, eapr1, fread_all, fsaveVarCntry, funlinkcctext, loadx, cntocc, popinterpkc, popkc, propkc, pyramid, pyredu
 #' @param cctoname xxx
-#' @param eapr xxx
+#' @param eapr eapr calc for give value (prop)
+#' @param eapr1 eapr calc for give value (prop) within data.table
 #' @param fread_all xxx
 #' @param fsaveVarCntry xxx
 #' @param funlinkcctext xxx
