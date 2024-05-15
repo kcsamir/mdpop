@@ -1,8 +1,8 @@
-#' Convert given edu distribution into eapr within data.table
+#' Convert given data table edu distribution into eapr within data.table
 #'
 #' This function returns EAPR for given education distribution
 #' @param prop distribution data 'edu' (sorted) 'value' for single age-group
-#' @return eapr
+#' @return eapr as data.table
 #' @keywords read
 #' @export
 #' @examples
