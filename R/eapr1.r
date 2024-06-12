@@ -17,5 +17,5 @@ eapr1 <- function (prop) {
 
   eapr.x$value <- x[2:n]/x[1:(n - 1)]
   eapr.x[,edut:=paste0(edu,as.numeric(substr(edu,2,2))+1)]
-  return(eapr.x)
+  return(as.data.frame(eapr.x))
 }
