@@ -2,7 +2,7 @@
 % Please edit documentation in R/eapr1.r
 \name{eapr1}
 \alias{eapr1}
-\title{Convert given edu distribution into eapr within data.table}
+\title{Convert given data table edu distribution into eapr within data.table}
 \usage{
 eapr1(prop)
 }
@@ -10,7 +10,7 @@ eapr1(prop)
 \item{prop}{distribution data 'edu' (sorted) 'value' for single age-group}
 }
 \value{
-eapr
+eapr as data.table
 }
 \description{
 This function returns EAPR for given education distribution
