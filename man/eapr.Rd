@@ -4,13 +4,13 @@
 \alias{eapr}
 \title{Convert given edu distribution into eapr}
 \usage{
-eapr(prop)
+eapr(prop, edutcol = F)
 }
 \arguments{
-\item{prop}{distribution data 'edu' (sorted) 'value' for single age-group}
+\item{prop}{distribution data 'edu' (sorted) 'value' as proportion for single age-group}
 }
 \value{
-eapr
+eapr datatable
 }
 \description{
 This function returns EAPR for given education distribution

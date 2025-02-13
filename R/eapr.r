@@ -2,6 +2,7 @@
 #'
 #' This function returns EAPR for given education distribution
 #' @param prop distribution data 'edu' (sorted) 'value' as proportion for single age-group
+#' @param edut F (default) T (if additional column edut is required)
 #' @return eapr datatable
 #' @keywords read
 #' @export
