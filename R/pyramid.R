@@ -1,11 +1,14 @@
 #' Population Pyramid in MSDem ??
 #'
 #' This function generates a pyramid for a cntry x Time
-#' @param res1 with four colums age, sex (male/female), edu, value
-#' @param Time year
-#' @param region region
-#' @param scen specific scenario
-#' @popunit unit of value (default '000)
+#' @param res1 with four colums age, sex (male/female), edu (optional, will be aggregated), value (agest will be replaced by age; ivar will be replaced by value)
+#' @param iTime year, this is needed for caption
+#' @param ireg region, this is needed for caption
+#' @param iiscen specific scenario, empirical (then no scenario is needed)
+#' @param ivar variable to be plotted (default pop)
+#' @param iscale unit of value (default 1 = '000, 1000 = millions, 1000000 - billions)
+#' @param facet.scale facet scale (default fixed)
+#' @param ititle.text full title text (default NULL)
 #' @caption Full list else year area scen will be pasted
 #' @nmlegend  legends for 'edu' else variable's unique values will be used
 #' @return pyramid
@@ -13,8 +16,12 @@
 #' @export
 #' @examples
 
-pyr_ag <- function(res1,ireg,ivar="pop",iTime,
-                   iiscen,iscale=1,
+pyr_ag <- function(res1,
+                   ireg,
+                   ivar="pop",
+                   iTime,
+                   iiscen = NULL,
+                   iscale=1,
                    facet.scale="fixed",
                    ititle.text = NULL,
                    icol="xxx"){
@@ -32,25 +39,25 @@ pyr_ag <- function(res1,ireg,ivar="pop",iTime,
   iscale.nm = ifelse(iscale == 1000,"Millions",ifelse(iscale == 1000000, "Billions","Thousands"))
 
   if(length(ireg)==1){
-    if(ireg == "World"){
+    if(ireg == "World"){ #this is for mcbm - can be removed
      if(length(iiscen) >1){#here the columns = 12. if it is a real list, it will be less than that
-        df1 = res1[,region:="World"][Time%in%iTime][,by=.(Time,sex,edu,agest,scen),.(pop=sum(pop,na.rm=T))
-        ][,setnames(.SD,c("agest","pop"),c("age","value"))][age<=100&age>=0]
+        df1 = res1[,region:="World"][Time%in%iTime][,by=.(Time,sex,agest,scen),.(pop=sum(pop,na.rm=T))
+        ][,setnames(.SD,c("agest",ivar),c("age","value"))][age<=100&age>=0]
       } else {
-        df1 = res1[,region:="World"][Time%in%iTime][,by=.(Time,sex,edu,agest),.(pop=sum(pop,na.rm=T))
-        ][,setnames(.SD,c("agest","pop"),c("age","value"))][age<=100&age>=0][,scen:=iiscen]
+        df1 = res1[,region:="World"][Time%in%iTime][,by=.(Time,sex,agest),.(pop=sum(pop,na.rm=T))
+        ][,setnames(.SD,c("agest",ivar),c("age","value"))][age<=100&age>=0][,scen:=iiscen]
       }
 
     } else {
       df1 = copy(res1)[region%in%ireg & Time%in%iTime & scen%in%iiscen
-      ][, setnames(.SD, c("pop","agest"),c("value","age"))][age<=100&age>=0]
+      ][, setnames(.SD, c(ivar,"agest"),c("value","age"))][age<=100&age>=0]
     }
   } else { #already selected here scen has cnt name so be careful
     df1 = copy(res1)[Time%in%iTime&scen%in%iiscen
-    ][, setnames(.SD, c("pop","agest"),c("value","age"))][age<=100&age>=0]
+    ][, setnames(.SD, c(ivar,"agest"),c("value","age"))][age<=100&age>=0]
 
   }
-  if(ivar!="pop") df1 <- df1%>%mutate(Time = paste(Time,Time+5,sep="-"))
+  if(ivar!=ivar) df1 <- df1%>%mutate(Time = paste(Time,Time+5,sep="-"))
 
   iage <- unique(df1$age)
 
@@ -59,7 +66,7 @@ pyr_ag <- function(res1,ireg,ivar="pop",iTime,
   male_nm = grep("^m", sex.names, value = T)
 
   #icnt should be supplied from outside OR
-  if(length(iTime)==1 && iTime == 2020) ititle = ireg else  ititle = paste(ireg, iiscen)
+  if(length(iTime)==1 && iiscen ==  "baseyear") ititle = ireg else  ititle = paste(ireg, iiscen)
 
   #adding alternative text
   if(!is.null(ititle.text)){
@@ -70,6 +77,7 @@ pyr_ag <- function(res1,ireg,ivar="pop",iTime,
                                                iscale.nm.tot)
   }
 
+  #mcbm specific
   if(length(iiscen)>1){
     if(length(ireg)>1) {
       ititle = paste("Population SSP2")

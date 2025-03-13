@@ -8,6 +8,8 @@ eapr(prop, edutcol = F)
 }
 \arguments{
 \item{prop}{distribution data 'edu' (sorted) 'value' as proportion for single age-group}
+
+\item{edut}{F (default) T (if additional column edut is required)}
 }
 \value{
 eapr datatable

@@ -9,7 +9,7 @@ pyr_ag(
   ireg,
   ivar = "pop",
   iTime,
-  iiscen,
+  iiscen = NULL,
   iscale = 1,
   facet.scale = "fixed",
   ititle.text = NULL,
@@ -17,13 +17,21 @@ pyr_ag(
 )
 }
 \arguments{
-\item{res1}{with four colums age, sex (male/female), edu, value}
+\item{res1}{with four colums age, sex (male/female), edu (optional, will be aggregated), value (agest will be replaced by age; ivar will be replaced by value)}
 
-\item{Time}{year}
+\item{ireg}{region, this is needed for caption}
 
-\item{region}{region}
+\item{ivar}{variable to be plotted (default pop)}
 
-\item{scen}{specific scenario}
+\item{iTime}{year, this is needed for caption}
+
+\item{iiscen}{specific scenario, empirical (then no scenario is needed)}
+
+\item{iscale}{unit of value (default 1 = '000, 1000 = millions, 1000000 - billions)}
+
+\item{facet.scale}{facet scale (default fixed)}
+
+\item{ititle.text}{full title text (default NULL)}
 }
 \value{
 pyramid
