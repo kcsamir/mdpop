@@ -22,7 +22,7 @@ Suggests:
     knitr,
     rmarkdown
 Imports:
-    data.table (>= 1.9.4),
+      data.table,
       stringr,
       tidyverse
 Language: en-US
