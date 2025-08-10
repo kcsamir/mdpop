@@ -9,6 +9,7 @@
 
 
 fwpppopA5G <- function(iwpp = "wpp2022"){
+  library(data.table)
   data("popAge5dt",package = iwpp)
   popas <- popAge5dt[,.(country_code,year,age,popM,popF)][
     ,setnames(.SD,c("country_code","age"),c("region","agest"))][
