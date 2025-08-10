@@ -16,4 +16,5 @@ popas region, Time, sex, agest, pop
 This function extracts population from WPP and prepare it to match the msdem
 }
 \keyword{UN}
+\keyword{importFrom(data.table,.)}
 \keyword{population}
