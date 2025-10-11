@@ -4,10 +4,13 @@
 #' @param iwpp "wpp2022" as default
 #' @return popas region, Time, sex, agest, pop
 #' @keywords UN population
-#' importFrom(data.table,.)
+#' @export
+#' @examples
+library(data.table)
+
 fwpppopA5G <- function(iwpp = "wpp2022"){
   data("popAge5dt",package = iwpp)
-  popas <- popAge5dt[,.(country_code,year,age,popM,popF)][
+  popas <- popAge5dt[,list(country_code,year,age,popM,popF)][
     ,setnames(.SD,c("country_code","age"),c("region","agest"))][
       ,agest:=(tstrsplit(x = agest,split = "[+-]",keep=1,fixed=F))][
         ,agest:=as.numeric(agest)]
