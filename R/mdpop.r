@@ -15,6 +15,7 @@
 #' @param popkc  xxx
 #' @param propkc  xxx
 #' @param pyramid  xxx
+#' @param pyrage provide res data and create pyramid of your choice for any variable
 #' @param pyredu  xxx
 #' @param un_logit  xxx
 #' @return y unlogit value

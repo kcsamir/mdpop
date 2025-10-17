@@ -33,6 +33,8 @@ mdpop(logit)
 
 \item{pyramid}{xxx}
 
+\item{pyrage}{provide res data and create pyramid of your choice for any variable}
+
 \item{pyredu}{xxx}
 
 \item{un_logit}{xxx}
